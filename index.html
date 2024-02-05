@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <title>Mi Portfolio - Landing Page</title>
     <style>
         /* Estilos CSS para personalizar la apariencia de tu landing page */
@@ -14,27 +13,46 @@
             padding: 0;
             background-color: #f0f0f0;
             text-align: center;
+            background-image: url('https://via.placeholder.com'); /* URL de la imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            animation: fadeIn 2s; /* Animación de entrada */
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #454749;
             padding: 20px;
+            text-align: center;
+            color: white;
         }
+
         .container {
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             margin-top: 0;
         }
+
         p {
             font-size: 18px;
             line-height: 1.6;
         }
+
         .cta-button {
             display: inline-block;
             padding: 10px 20px;
@@ -44,33 +62,28 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .cta-button:hover {
             background-color: #6c757d;
         }
     </style>
 </head>
 <body>
-    <header style="background-color: #454749; padding: 20px; text-align: center;">
-         <!-- Agrega tu foto de perfil -->
-   <img src="https://i.ibb.co/V91MVsM/imagen-carolina2-removebg-preview.png" alt="Foto de perfil" style="width: 150px; border-radius: 50%;">
-
+    <header>
+        <!-- Agrega tu foto de perfil -->
+        <img src="https://i.ibb.co/V91MVsM/imagen-carolina2-removebg-preview.png" alt="Foto de perfil" style="width: 150px; border-radius: 50%;">
         <h1 style="font-size: 36px; margin-bottom: 10px;">Carolina Edén Sartini</h1>
         <p style="font-size: 18px; color: #6c757d;">Desarrolladora Full Stack | Especialista en Blockchain</p>
-        <!-- Incluir la imagen -->
-         <!-- Ícono de LinkedIn -->
-    <a href="https://www.linkedin.com/in/carolina-ed%C3%A9n-sartini-034b52241/" target="_blank" style="color: #fff; text-decoration: none; margin-right: 10px;">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <!-- Ícono de GitHub -->
-    <a href="https://github.com/Edeok" target="_blank" style="color: #fff; text-decoration: none;">
-        <i class="fab fa-github"></i>
-    </a>
-    
-
-      
+        <!-- Ícono de LinkedIn -->
+        <a href="https://www.linkedin.com/in/carolina-ed%C3%A9n-sartini-034b52241/" target="_blank" style="color: #fff; text-decoration: none; margin-right: 10px;">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <!-- Ícono de GitHub -->
+        <a href="https://github.com/Edeok" target="_blank" style="color: #fff; text-decoration: none;">
+            <i class="fab fa-github"></i>
+        </a>
     </header>
-    
-    
+
     <div class="container">
         <h2>Sobre mí</h2>
         <p>Soy una apasionada desarrolladora Full Stack con experiencia en tecnologías Blockchain. Mi objetivo es crear soluciones innovadoras y funcionales que impulsen el éxito en proyectos de desarrollo tecnológico.</p>
