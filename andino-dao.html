@@ -40,19 +40,22 @@
         }
         /* Estilos para las imágenes */
         .project-images {
-            display: flex; /* Para alinear las imágenes en una fila */
-            justify-content: center; /* Para centrar las imágenes horizontalmente */
-            margin-bottom: 20px; /* Espacio adicional debajo de las imágenes */
-        }
-        .project-images img {
-            width: 150px; /* Tamaño deseado de las imágenes */
-            height: auto; /* Altura automática para mantener la proporción */
-            margin: 0 10px; /* Espacio entre las imágenes */
-            transition: transform 0.3s ease; /* Transición para el agrandamiento */
-        }
-        .project-images img:hover {
-            transform: scale(3.0); /* Agrandar la imagen al poner el mouse sobre ella */
-        }
+    display: flex; /* Para alinear las imágenes en una fila */
+    justify-content: center; /* Para centrar las imágenes horizontalmente */
+    margin-bottom: 20px; /* Espacio adicional debajo de las imágenes */
+}
+
+.project-images img {
+    width: auto; /* Ancho automático para ajustarse al contenedor */
+    height: 150px; /* Altura deseada de las imágenes */
+    margin: 0 5px; /* Espacio entre las imágenes */
+    transition: transform 0.3s ease; /* Transición para el agrandamiento */
+}
+
+.project-images img:hover {
+    transform: scale(1.5); /* Agrandar la imagen al poner el mouse sobre ella */
+}
+
     </style>
 </head>
 <body>
@@ -72,12 +75,12 @@
                         <div class="project-images">
                             <img src="https://i.ibb.co/grM7Mmd/Captura-de-pantalla-2024-02-02-204453.png" alt="Imagen 1">
                             <img src="https://i.ibb.co/s6LtBz2/Captura-de-pantalla-2024-02-02-204538.png" alt="Imagen 2">
-                            <img src="https://i.ibb.co/Y7S5ttf/Captura-de-pantalla-2024-02-02-204834.png" alt="Imagen 3">
+                         
                             <img src="https://i.ibb.co/L9xhS5K/Captura-de-pantalla-2024-02-02-204818.png" alt="Imagen 4">
-                            <img src="https://i.ibb.co/FgNQkrj/Captura-de-pantalla-2024-02-02-204726.png" alt="Imagen 5">
+                        
                             <img src="https://i.ibb.co/8s1Xx4x/Captura-de-pantalla-2024-02-02-204901.png" alt="imagen 6">
                             <img src="https://i.ibb.co/pns93Q0/Captura-de-pantalla-2024-02-02-204928.png" alt="imagen 7">
-                            
+
                         </div>
                         <!-- Resto del contenido -->
                         <li><strong>Fechas del Proyecto:</strong> Noviembre 2023 – Enero 2024</li>
