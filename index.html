@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <title>Mi Portfolio - Landing Page</title>
     <style>
         /* Estilos CSS para personalizar la apariencia de tu landing page */
@@ -38,7 +39,7 @@
         .container {
             max-width: 800px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 2px;
             background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -66,6 +67,32 @@
         .cta-button:hover {
             background-color: #6c757d;
         }
+
+        /* Estilos para los íconos */
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: transform 0.3s ease; /* Transición para el agrandamiento */
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.5); /* Agrandar el ícono al poner el mouse sobre él */
+        }
+         /* Estilos para el footer */
+         footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1px;
+            position: fixed; /* Posición fija */
+            bottom: 0; /* Lo posiciona en la parte inferior */
+            width: 100%; /* Ocupa todo el ancho */
+        }
     </style>
 </head>
 <body>
@@ -74,14 +101,17 @@
         <img src="https://i.ibb.co/V91MVsM/imagen-carolina2-removebg-preview.png" alt="Foto de perfil" style="width: 150px; border-radius: 50%;">
         <h1 style="font-size: 36px; margin-bottom: 10px;">Carolina Edén Sartini</h1>
         <p style="font-size: 18px; color: #6c757d;">Desarrolladora Full Stack | Especialista en Blockchain</p>
-        <!-- Ícono de LinkedIn -->
-        <a href="https://www.linkedin.com/in/carolina-ed%C3%A9n-sartini-034b52241/" target="_blank" style="color: #fff; text-decoration: none; margin-right: 10px;">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <!-- Ícono de GitHub -->
-        <a href="https://github.com/Edeok" target="_blank" style="color: #fff; text-decoration: none;">
-            <i class="fab fa-github"></i>
-        </a>
+        <!-- Íconos de redes sociales -->
+        <div class="social-icons">
+            <!-- Ícono de LinkedIn -->
+            <a href="https://www.linkedin.com/in/carolina-ed%C3%A9n-sartini-034b52241/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- Ícono de GitHub -->
+            <a href="https://github.com/Edeok" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </header>
 
     <div class="container">
@@ -95,6 +125,7 @@
         <h2></h2>
         <!-- Aquí puedes agregar tus proyectos -->
     </section>
+    
     <footer>
         <p>&copy; 2024 Mi Portfolio</p>
     </footer>
