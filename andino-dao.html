@@ -6,55 +6,101 @@
     <title>Mi Portfolio</title>
     <style>
         /* Aquí puedes agregar estilos CSS para diseñar tu página */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        button {
-            background-color: #292f35;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #555;
-        }
-        /* Estilos para las imágenes */
-        .project-images {
-    display: flex; /* Para alinear las imágenes en una fila */
-    justify-content: center; /* Para centrar las imágenes horizontalmente */
-    margin-bottom: 20px; /* Espacio adicional debajo de las imágenes */
+       /* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #292f35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Estilos para las imágenes */
+.project-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .project-images img {
-    width: auto; /* Ancho automático para ajustarse al contenedor */
-    height: 150px; /* Altura deseada de las imágenes */
-    margin: 0 5px; /* Espacio entre las imágenes */
-    transition: transform 0.3s ease; /* Transición para el agrandamiento */
+    width: auto;
+    height: 150px;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
 }
 
 .project-images img:hover {
-    transform: scale(1.5); /* Agrandar la imagen al poner el mouse sobre ella */
+    transform: scale(1.5);
 }
+
+/* Media queries para estilos responsive */
+@media only screen and (max-width: 600px) {
+    /* Estilos para dispositivos con ancho máximo de 600px */
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .project-images img {
+        height: 100px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos para dispositivos con ancho mínimo de 601px y máximo de 1024px */
+    body {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
 
     </style>
 </head>
