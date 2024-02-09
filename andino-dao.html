@@ -79,9 +79,28 @@ button:hover {
         padding: 8px 16px;
     }
 
+  /* Estilos para las imágenes */
+.project-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Permite desplazamiento horizontal si las imágenes son demasiado grandes */
+}
+
+.project-images img {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen al ancho del contenedor */
+    height: auto; /* Hace que la altura se ajuste automáticamente para mantener la proporción */
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 600px) {
     .project-images img {
-        height: 100px;
+        max-width: 90%; /* Reducir el ancho máximo para que quepa en la pantalla móvil */
     }
+}
+
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
