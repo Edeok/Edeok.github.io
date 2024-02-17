@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
     <style>
-        /* Aquí puedes agregar estilos CSS para diseñar tu página */
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -38,6 +38,40 @@
         button:hover {
             background-color: #555;
         }
+        /* Estilos para las imágenes */
+        .project-images {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            overflow-x: auto; /* Permite desplazamiento horizontal si las imágenes son demasiado grandes */
+        }
+        .project-images img {
+            width: auto;
+            height: 150px;
+            margin: 0 5px;
+            transition: transform 0.3s ease;
+        }
+        .project-images img:hover {
+            transform: scale(1.5);
+        }
+        /* Media query para dispositivos móviles */
+        @media only screen and (max-width: 600px) {
+            /* Estilos para dispositivos con ancho máximo de 600px */
+            body {
+                font-size: 14px;
+            }
+            section {
+                padding: 10px;
+                margin: 10px;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .project-images img {
+                height: 100px; /* Reducir la altura de las imágenes en dispositivos móviles */
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,6 +82,9 @@
     <section>
         <h1>Proyecto DogsPi</h1>
         <div>
+            <div class="project-images">
+                <img src="https://i.ibb.co/QDQyVWj/dogPI-1.png" alt="Imagen 1">
+            </div>
             <h3>Descripción:</h3>
             <p>Este proyecto se trata de una plataforma que ofrece información sobre diversas razas de perros.</p>
             <h3>Funciones y Logros:</h3>
