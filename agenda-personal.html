@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
     <style>
-        /* Aquí puedes agregar estilos CSS para diseñar tu página */
-        body {
+    /* Estilos generales */
+    body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #d6d6d6;
         }
         header {
-            background-color: #333;
+            background-color: #343a40;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
+        header h1 {
+            color: white; /* Hacer que el texto del encabezado sea blanco */
+        }
         section {
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto; /* Para centrar el contenedor */
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        h1, h2, h3 {
+            color: #343a40;
         }
         button {
             background-color: #292f35;
@@ -38,6 +45,41 @@
         button:hover {
             background-color: #555;
         }
+        /* Estilos para las imágenes */
+        .project-images {
+            display: flex;
+            justify-content: center; /* Para centrar las imágenes */
+            margin-bottom: 20px;
+            overflow-x: auto; /* Permite desplazamiento horizontal si las imágenes son demasiado grandes */
+        }
+        .project-images img {
+            width: auto;
+            height: 150px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .project-images img:hover {
+            transform: scale(1.5);
+        }
+        /* Media queries para estilos responsive */
+        @media only screen and (max-width: 600px) {
+            /* Estilos para dispositivos con ancho máximo de 600px */
+            body {
+                font-size: 14px;
+            }
+            section {
+                padding: 10px;
+                margin: 10px;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .project-images img {
+                height: 100px; /* Reducir la altura de las imágenes en dispositivos móviles */
+            }
+        }
     </style>
 </head>
 <body>
@@ -51,6 +93,12 @@
     <section>
     <div>
         <h3>Agenda Personal</h3>
+        <div class="project-images">
+            <img src="https://i.ibb.co/ZYbhKbZ/agenda-3.png" alt="Imagen 3">
+            <img src="https://i.ibb.co/P6vK7Nm/agenda-2.png" alt="Imagen 2">
+         
+        </div>
+
         <ul>
             <li><strong>Fechas del Proyecto:</strong> febrero 2024</li>
             <li><strong>Descripción del Proyecto:</strong> (Aquí puedes escribir una descripción breve del proyecto, si lo deseas)</li>

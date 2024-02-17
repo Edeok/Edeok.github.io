@@ -10,20 +10,28 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #d6d6d6;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #343a40;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
+        header h1 {
+            color: white; /* Hacer que el texto del encabezado sea blanco */
+        }
         section {
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto;
             background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        h1, h2, h3 {
+            color: #343a40;
         }
         button {
             background-color: #292f35;
@@ -49,10 +57,11 @@
             width: auto;
             height: 150px;
             margin: 0 5px;
+            border-radius: 5px;
             transition: transform 0.3s ease;
         }
         .project-images img:hover {
-            transform: scale(1.5);
+            transform: scale(1.1);
         }
         /* Media query para dispositivos móviles */
         @media only screen and (max-width: 600px) {
@@ -61,8 +70,8 @@
                 font-size: 14px;
             }
             section {
-                padding: 10px;
-                margin: 10px;
+                padding: 15px;
+                margin: 10px auto;
             }
             button {
                 font-size: 14px;
@@ -80,33 +89,35 @@
     </header>
    
     <section>
-        <h1>Proyecto DogsPi</h1>
+        <h2>Proyecto DogsPi</h2>
         <div>
             <div class="project-images">
                 <img src="https://i.ibb.co/QDQyVWj/dogPI-1.png" alt="Imagen 1">
             </div>
-            <h3>Descripción:</h3>
-            <p>Este proyecto se trata de una plataforma que ofrece información sobre diversas razas de perros.</p>
-            <h3>Funciones y Logros:</h3>
+            <p><strong>Descripción:</strong> Este proyecto se trata de una plataforma que ofrece información sobre diversas razas de perros.</p>
+            <p><strong>Funciones y Logros:</strong></p>
             <ul>
                 <li>Implementación de un sistema de búsqueda por criterios específicos.</li>
                 <li>Desarrollo de un sistema de filtrado y ordenamiento de razas.</li>
                 <li>Integración de una interfaz amigable para el usuario.</li>
             </ul>
-            <h3>Características destacadas:</h3>
+            <p><strong>Características destacadas:</strong></p>
             <ul>
                 <li>Interfaz intuitiva y fácil de usar.</li>
                 <li>Amplia base de datos de razas de perros.</li>
                 <li>Sistema de paginación para facilitar la navegación.</li>
                 <li>Compatibilidad con dispositivos móviles.</li>
             </ul>
-            <h3>Repositorio del Proyecto:</h3>
-            <p><a href="https://github.com/Edeok/DogsPi" target="_blank">Edeok/DogsPi</a></p>
+            <p><strong>Repositorio del Proyecto:</strong> <a href="https://github.com/Edeok/DogsPi" target="_blank">Edeok/DogsPi</a></p>
+            
+           
         </div>
         <button onclick="window.location.href = 'proyectos.html';">Volver a Proyectos</button>
     </section>
+    
     <!-- Continuar con el resto de la información... -->
-    <footer>
+    
+    <footer style="text-align: center; padding: 20px;">
         <p>&copy; 2024 Mi Portfolio</p>
     </footer>
 </body>
