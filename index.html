@@ -12,25 +12,25 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
             text-align: center;
-            background-image: url('https://via.placeholder.com'); /* URL de la imagen de fondo */
-            background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
-            background-position: center; /* Centra la imagen */
-            animation: fadeIn 2s; /* Animación de entrada */
+            cursor:  auto; /* Cursor personalizado */
+            overflow: hidden; /* Oculta el desbordamiento */
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        /* Efecto de partículas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Sitúa el lienzo detrás de otros elementos */
+            width: 100%;
+            height: 100%;
         }
 
         header {
-            background-color: #343a40;
+            background-color: #000; /* Fondo negro */
             padding: 20px;
             text-align: center;
             color: white;
@@ -40,9 +40,9 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente negro */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca */
         }
 
         h1 {
@@ -57,15 +57,15 @@
         .cta-button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #292f35;
-            color: #fff;
+            background-color: #292f35; /* Fondo del botón */
+            color: #fff; /* Texto blanco */
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         .cta-button:hover {
-            background-color: #6c757d;
+            background-color: #6c757d; /* Cambio de color al pasar el mouse */
         }
 
         /* Estilos para los íconos */
@@ -84,7 +84,11 @@
         .social-icons a:hover {
             transform: scale(1.5); /* Agrandar el ícono al poner el mouse sobre él */
         }
-        
+
+        /* Resaltar palabras al pasar el mouse */
+        .highlight:hover {
+            color: #ff0; /* Cambio de color al pasar el mouse */
+        }
     </style>
 </head>
 <body>
@@ -121,5 +125,65 @@
     <footer>
         <p>&copy; 2024 Mi Portfolio</p>
     </footer>
+
+    <!-- Partículas -->
+    <canvas id="particle-canvas"></canvas>
+    <script>
+        // Configuración del lienzo de partículas
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Creación de partículas
+        const particlesArray = [];
+        const numberOfParticles = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                    this.speedX = -this.speedX;
+                }
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                    this.speedY = -this.speedY;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+        }
+
+        init();
+        animate();
+    </script>
 </body>
 </html>

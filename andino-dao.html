@@ -10,10 +10,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #d6d6d6;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            position: relative; /* Agregar posición relativa */
         }
         header {
-            background-color: #343a40;
+            background-color: #000;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -24,13 +26,15 @@
         section {
             padding: 20px;
             margin: 20px auto; /* Para centrar el contenedor */
-            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente negro */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca */
             max-width: 800px;
+            position: relative; /* Agregar posición relativa */
+            z-index: 1; /* Asegurar que esté por encima del canvas */
         }
         h1, h2, h3 {
-            color: #343a40;
+            color: #fff; /* Texto blanco */
         }
         button {
             background-color: #292f35;
@@ -62,6 +66,21 @@
         .project-images img:hover {
             transform: scale(1.5);
         }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente negro */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca */
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
         /* Media queries para estilos responsive */
         @media only screen and (max-width: 600px) {
             /* Estilos para dispositivos con ancho máximo de 600px */
@@ -81,12 +100,35 @@
             }
         }
 
+        /* Estilos para el canvas de partículas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        ul li a,
+        ol li a {
+            color:  #f562ce; /* Color del texto */
+            text-decoration: none; /* Eliminar subrayado */
+            transition: color 0.3s ease; /* Transición de color suave */
+            border-bottom: 1px solid transparent; /* Línea inferior transparente por defecto */
+        }
+
+        ul li a:hover,
+        ol li a:hover {
+            color: #fa05a8; /* Cambiar color al pasar el ratón por encima */
+            border-bottom: 1px solid #f603c1; /* Mostrar línea inferior roja al pasar el ratón por encima */
+        }
 
     </style>
 </head>
 <body>
     <header>
-        <h1>Mi Portfolio</h1>
+        <h1 class="container">Mi Portfolio</h1>
     </header>
     <section>
         <h2>Proyectos</h2>
@@ -104,7 +146,6 @@
                             <img src="https://i.ibb.co/L9xhS5K/Captura-de-pantalla-2024-02-02-204818.png" alt="Imagen 3">
                             <img src="https://i.ibb.co/8s1Xx4x/Captura-de-pantalla-2024-02-02-204901.png" alt="imagen 4">
                             <img src="https://i.ibb.co/pns93Q0/Captura-de-pantalla-2024-02-02-204928.png" alt="imagen 5">
-
                         </div>
                         <!-- Resto del contenido -->
                         <li><strong>Fechas del Proyecto:</strong> Noviembre 2023 – Enero 2024</li>
@@ -133,5 +174,64 @@
     <footer style="text-align: center; padding: 20px;">
         <p>&copy; 2024 Mi Portfolio</p>
     </footer>
+     <!-- Partículas -->
+     <canvas id="particle-canvas"></canvas>
+     <script>
+         // Configuración del lienzo de partículas
+         const canvas = document.getElementById('particle-canvas');
+         const ctx = canvas.getContext('2d');
+         canvas.width = window.innerWidth;
+         canvas.height = window.innerHeight;
+ 
+         // Creación de partículas
+         const particlesArray = [];
+         const numberOfParticles = 100;
+ 
+         class Particle {
+             constructor() {
+                 this.x = Math.random() * canvas.width;
+                 this.y = Math.random() * canvas.height;
+                 this.size = Math.random() * 5 + 1;
+                 this.speedX = Math.random() * 3 - 1.5;
+                 this.speedY = Math.random() * 3 - 1.5;
+             }
+ 
+             update() {
+                 this.x += this.speedX;
+                 this.y += this.speedY;
+                 if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                     this.speedX = -this.speedX;
+                 }
+                 if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                     this.speedY = -this.speedY;
+                 }
+             }
+ 
+             draw() {
+                 ctx.fillStyle = '#fff';
+                 ctx.beginPath();
+                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                 ctx.fill();
+             }
+         }
+ 
+         function init() {
+             for (let i = 0; i < numberOfParticles; i++) {
+                 particlesArray.push(new Particle());
+             }
+         }
+ 
+         function animate() {
+             requestAnimationFrame(animate);
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+             for (let i = 0; i < particlesArray.length; i++) {
+                 particlesArray[i].update();
+                 particlesArray[i].draw();
+             }
+         }
+ 
+         init();
+         animate();
+     </script>
 </body>
 </html>
